@@ -45,7 +45,8 @@ class _WelcomePageState extends State<WelcomePage> {
   }
 
   Widget _buildFeatureItem(String imgName, String intro, double marginTop) {
-    return SizedBox(
+    return Container(
+      margin: EdgeInsets.only(top: duSetHeight(20)),
       width: duSetWidth(295),
       height: duSetHeight(80),
       child: Row(
@@ -82,11 +83,12 @@ class _WelcomePageState extends State<WelcomePage> {
       height: duSetHeight(40),
       margin: EdgeInsets.only(bottom: duSetHeight(20)),
       child: MaterialButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/sign-in');
+        },
         color: AppColors.primaryElement,
         textColor: AppColors.primaryElementText,
-        shape: const RoundedRectangleBorder(
-            borderRadius: Radii.k6pxRadius),
+        shape: const RoundedRectangleBorder(borderRadius: Radii.k6pxRadius),
         child: const Text('Get Started'),
       ),
     );
@@ -115,7 +117,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 'feature-3',
                 'You can get Premium to unlock hundreds of publications',
                 duSetHeight(40)),
-            const Spacer(),  // 撑开
+            const Spacer(), // 撑开
             _buildStartButton(),
           ],
         ),
