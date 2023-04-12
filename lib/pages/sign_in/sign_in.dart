@@ -79,24 +79,25 @@ class _SignInState extends State<SignInPage> {
   final _emailFocusNode = FocusNode();
 
   _handleSignin() {
-    if (!duIsEmail(_emailController.text)) {
-      _emailFocusNode.requestFocus();
-      toastInfo(msg: '请输入正确的邮箱！');
-      return;
-    }
-    if (!duCheckStringLength(_passwordController.text, 9)) {
-      toastInfo(msg: '请输入正确的密码长度！');
-      return;
-    }
+    Navigator.pushNamed(context, '/app-home');
+    return;
+    // if (!duIsEmail(_emailController.text)) {
+    //   _emailFocusNode.requestFocus();
+    //   toastInfo(msg: '请输入正确的邮箱！');
+    //   return;
+    // }
+    // if (!duCheckStringLength(_passwordController.text, 9)) {
+    //   toastInfo(msg: '请输入正确的密码长度！');
+    //   return;
+    // }
 
-  UserRequestEntity params = UserRequestEntity(email: 'email', password: duSHA256(_passwordController.text));
-    UserAPI.login(
-            params: params)
-        .then((value) { 
-      toastInfo(msg: value.toString());
-    }).catchError((onError) {
-      toastInfo(msg: onError.toString());
-    });
+    // UserLoginRequestEntity params = UserLoginRequestEntity(
+    //     email: 'email', password: duSHA256(_passwordController.text));
+    // UserAPI.login(params: params).then((value) {
+    //   toastInfo(msg: value.toString());
+    // }).catchError((onError) {
+    //   toastInfo(msg: onError.toString());
+    // });
   }
 
   _handleSignup() {

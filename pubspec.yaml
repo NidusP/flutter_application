@@ -47,8 +47,9 @@ dependencies:
 
   # sha
   crypto: ^3.0.2
+  # localstorage: ^4.0.0+1
+  shared_preferences: ^2.1.0
 
-  localstorage: ^4.0.0+1
 
 dev_dependencies:
   flutter_test:
@@ -97,6 +98,9 @@ flutter:
       fonts:
         - asset: assets/fonts/Montserrat-SemiBold.ttf
           weight: 600
-  
+    - family: Iconfont
+      fonts:
+        - asset: assets/fonts/Iconfont.ttf
+          weight: 400
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
